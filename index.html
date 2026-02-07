@@ -124,7 +124,7 @@
                 <p class="text-gray-400 text-sm">Scan & Pay to Confirm Entry</p>
             </div>
             <div class="bg-white p-4 rounded-xl w-48 h-48 mx-auto flex items-center justify-center">
-                <img src="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=upi://pay?pa=9339072785@mbk&pn=TournamentOrganizer&am=150&cu=INR" alt="QR">
+                <img src="1769917541366.jpg" alt="QR" class="max-w-full max-h-full">
             </div>
             <div class="bg-neutral-800 p-3 rounded-lg text-center">
                 <span class="text-xs text-gray-400">UPI ID</span><br>
@@ -149,33 +149,19 @@
     </main>
 
     <script>
-        // Initialize Lucide Icons
         lucide.createIcons();
-
-        // Organizers Data
         const organizers = ["Rajesh", "Jeet", "Aditha", "Shadow ff", "Badal"];
         const orgList = document.getElementById('organizers-list');
         organizers.forEach(name => {
             orgList.innerHTML += `<span class="bg-neutral-900 border border-orange-900/50 px-3 py-1 rounded text-sm text-gray-300 shadow-sm">${name}</span>`;
         });
-
-        // Navigation Function
         function navigateTo(stepId) {
             document.querySelectorAll('.step-content').forEach(s => s.classList.remove('active'));
             document.getElementById(stepId).classList.add('active');
             window.scrollTo(0,0);
         }
-
-        // Form Submissions
-        document.getElementById('regForm').onsubmit = (e) => {
-            e.preventDefault();
-            navigateTo('step-payment');
-        };
-
-        document.getElementById('payForm').onsubmit = (e) => {
-            e.preventDefault();
-            navigateTo('step-success');
-        };
+        document.getElementById('regForm').onsubmit = (e) => { e.preventDefault(); navigateTo('step-payment'); };
+        document.getElementById('payForm').onsubmit = (e) => { e.preventDefault(); navigateTo('step-success'); };
     </script>
 </body>
 </html>
